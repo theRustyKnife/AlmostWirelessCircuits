@@ -1,0 +1,9 @@
+{
+  "name": "almost-wireless-circuits",
+  "version": "0.1.0",
+  "factorio_version": "0.14",
+  "title": "Almost Wireless Circuits",
+  "author": "theRustyKnife",
+  "description": "Adds an electric pole that has a very long range but doesn't allow copper cables to be connected to it.",
+  "dependencies": ["base"]
+}
