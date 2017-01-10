@@ -1,2 +1,6 @@
+##0.2.0##
+* Complete rewrite (hopefully backwards compatible)
++ Added an option to make normal poles circuit only (with blueprint support)
+
 ##0.1.0##
 + Initial release

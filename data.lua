@@ -1,42 +1,49 @@
-local config = require "config"
+local config = require "script.config"
+local util = require "script.util"
 
 
--- define entities here
-local entities = {
+util.data.make_entities{
 	{
-		name = config.POLE_NAME,
-		health = 1500,
-		wire_distance = config.MAX_DISTANCE,
-		supply_distance = 0,
-	}
+		base = {type = "electric-pole", name = "big-electric-pole"},
+		properties = {
+			name = "almost-an-antenna",
+			health = 1500,
+			wire_distance = 500,
+			supply_distance = 0,
+		},
+	},
+	{
+		base = {type = "container", name = "steel-chest"},
+		hidden = true,
+		properties = {
+			name = config.DUMMY_NAME,
+			flags = {"placeable-off-grid", "placeable-neutral", "player-creation"},
+			selectable_in_game = false,
+			item_slot_count = 0,
+			collision_mask = {},
+			collision_box = {{0, 0}, {0, 0}},
+			icon = "__almost-wireless-circuits__/graphics/trans.png",
+			minable = {mining_time = 1, result = config.DUMMY_NAME},
+			picture =
+			{
+				filename = "__almost-wireless-circuits__/graphics/trans.png",
+				priority = "extra-high",
+				width = 0,
+				height = 0,
+			},
+		},
+	},
 }
 
 
--- here we create our entities with all the necessary stuff
-for _, e in ipairs(entities) do
-	-- entity
-	local te = util.table.deepcopy(data.raw["electric-pole"]["big-electric-pole"])
-	te.name = e.name
-	te.minable.result = e.name
-	te.max_health = e.health
-	te.maximum_wire_distance = e.wire_distance
-	te.supply_area_distance = e.supply_distance
-	
-	-- item
-	local ti = util.table.deepcopy(data.raw["item"]["big-electric-pole"])
-	ti.name = e.name
-	ti.place_result = e.name
-	ti.order = "b[combinators]-cb[almost-an-antenna]"
-	ti.subgroup = "circuit-network"
-	
-	-- recipe
-	local tr = util.table.deepcopy(data.raw["recipe"]["constant-combinator"])
-	tr.name = e.name
-	tr.result = e.name
-	
-	-- tech
-	table.insert(data.raw.technology["circuit-network"].effects, {type = "unlock-recipe", recipe = e.name})
-	
-	-- add to data
-	data:extend{te, ti, tr}
-end
+--TODO: when util is updated to support it, change this...
+data:extend{
+	{
+		type = "item",
+		name = config.DUMMY_NAME,
+		icon = "__almost-wireless-circuits__/graphics/trans.png",
+		flags = {"goes-to-main-inventory"},
+		place_result = config.DUMMY_NAME,
+		stack_size = 1
+	},
+}
