@@ -17,6 +17,10 @@ In addition, you can also toggle if the pole will get auto-connected to neighbor
 -------------
 
 #Changelog#
+##0.2.1##
+* Fixed some crashes when loading a save from the previous version
+* Fixed that almost-an-antenna had wrong properties
+
 ##0.2.0##
 * Complete rewrite (hopefully backwards compatible)
 + Added an option to make normal poles circuit only (with blueprint support)
