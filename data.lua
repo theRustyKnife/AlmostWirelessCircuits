@@ -7,9 +7,9 @@ util.data.make_entities{
 		base = {type = "electric-pole", name = "big-electric-pole"},
 		properties = {
 			name = "almost-an-antenna",
-			health = 1500,
-			wire_distance = 500,
-			supply_distance = 0,
+			max_health = 1500,
+			maximum_wire_distance = 500,
+			supply_area_distance = 0,
 		},
 	},
 	{

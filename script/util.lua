@@ -170,9 +170,9 @@ function util.format.time(ticks) -- mostly borrowed from original util
 end
 
 
-package.loaded[".util"] = function() return util; end
---[[pcall(function()]] if script ~= nil then util.gui = require ".gui_util"; end;-- end) -- functions for handling gui, only load when exists
---[[pcall(function()]] util.localu = require ".local_util";-- end) -- specific functions for the current mod, only load when exists
+package.loaded[".util"] = util
+pcall(function() if script ~= nil then util.gui = require ".gui_util"; end; end) -- functions for handling gui, only load when exists
+pcall(function() util.localu = require ".local_util"; end) -- specific functions for the current mod, only load when exists
 
 
 return util
