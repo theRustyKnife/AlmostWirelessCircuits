@@ -36,7 +36,6 @@ util.data.make_entities{
 }
 
 
---TODO: when util is updated to support it, change this...
 data:extend{
 	{
 		type = "item",
