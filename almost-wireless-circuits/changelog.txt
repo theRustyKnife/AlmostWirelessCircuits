@@ -1,3 +1,6 @@
+##0.3.1##
+* Fixed a crash when destroying ghost of an electric pole
+
 ##0.3.0##
 * Updated for Factorio 0.15
 

@@ -58,7 +58,7 @@ local function on_destroyed(event)
 	
 	if entity.type == "electric-pole" then util.localu.try_rm_pole(entity)
 	elseif entity.type == "entity-ghost" and entity.ghost_type == "electric-pole" then
-		local dummy = surface.find_entity(config.DUMMY_NAME, entity.position)
+		local dummy = entity.surface.find_entity(config.DUMMY_NAME, entity.position)
 		if dummy then dummy.destroy() end
 	end
 end
