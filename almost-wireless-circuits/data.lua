@@ -35,6 +35,7 @@ util.data.make_entities{
 	},
 }
 
+data.raw["electric-pole"]["almost-an-antenna"].minable.result = "almost-an-antenna"
 
 data:extend{
 	{

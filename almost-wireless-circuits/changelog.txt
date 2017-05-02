@@ -1,3 +1,6 @@
+##0.3.2##
+* Fixed that mining an almost-an-antenna would return big electric pole instead
+
 ##0.3.1##
 * Fixed a crash when destroying ghost of an electric pole
 
